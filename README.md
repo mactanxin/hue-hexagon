@@ -1,5 +1,4 @@
 # hue-hexagon
-<<<<<<< HEAD
 hexagon background component in Vue
 
 ## Project setup
