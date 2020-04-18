@@ -1,16 +1,41 @@
 <template>
-  <div class="hexagon"></div>
+  <div :style="classObject" class="hexagon"></div>
 </template>
 
 <script>
+export default {
+  name: 'Hexagon',
+  props: {
+    height: {
+      type: String,
+      default: '110px'
+    },
+    width: {
+      type: String,
+      default: '100px'
+    },
+    bgColor: {
+      type: String,
+      default: '#111'
+    }
+  },
+  computed: {
+    classObject: function () {
+      return {
+        'position': 'relative',
+        'height': this.height,
+        'width': this.width,
+        'background': this.bgColor,
+        'margin': '1px',
+      }
+    }
+  }
+};
 </script>
 
 <style>
 .hexagon{
   position: relative;
-  height: 110px;
-  width: 100px;
-  background: #111;
   margin: 1px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   transition: 2s;
